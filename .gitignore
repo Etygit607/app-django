@@ -1,0 +1,13 @@
+#ignore text file
+*.txt
+
+#ignore .env file
+.env
+
+#ignore sass-cache
+.sass-cache
+
+#ignore python cache
+*.pyc
+
+#ignore python cache
