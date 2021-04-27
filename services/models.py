@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Services(models.Model):
+class Service(models.Model):
 
     title = models.CharField(max_length=50)
     content = models.CharField(max_length=50)
