@@ -10,4 +10,5 @@
 #ignore python cache
 *.pyc
 
-#ignore python cache
+#ignore db
+db.sqlite3
