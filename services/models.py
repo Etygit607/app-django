@@ -6,7 +6,7 @@ class Service(models.Model):
 
     title = models.CharField(max_length=50)
     content = models.CharField(max_length=50)
-    image = models.ImageField()
+    image = models.ImageField(upload_to = 'services')
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now_add=True)
 
