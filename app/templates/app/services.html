@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    services
-</body>
-</html>
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}
+    Services
+{% endblock %}
+
+{% block content %}
+
+<!-- Message -->
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+            <div class="mx-auto col-xl-9">
+                {% for service in services %}
+                    <div class="text-center rounded cta-inner">
+                        <h2 class="mb-4 section-heading">
+                            {{service.title}}
+                        </h2>
+                        <p class="mb-0">{{service.content}}</p>
+                        <img height="100" src="{{ service.image.url}}" alt="Marketing Digital" >
+                    
+                    </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
