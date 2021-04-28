@@ -55,8 +55,8 @@
           <li class="nav-item px-lg-4 {% if request.path == '/store/' %}active {% endif %} ">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'store'  %}">Tienda</a>
           </li>
-          <li class="nav-item px-lg-4 {% if request.path == '/contacts/' %}active {% endif %} ">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'contacts'  %}">Contacto</a>
+          <li class="nav-item px-lg-4 {% if request.path == '/contact/' %}active {% endif %} ">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'contact'  %}">Contacto</a>
           </li>
           <li class="nav-item px-lg-4 {% if request.path|slice:':6' == '/blog/' %}active {% endif %} ">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'blog'  %}">Blog</a>
