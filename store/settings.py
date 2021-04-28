@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9(4q5zfa5!-%f=upb9=#can65^mjk@&_xd@yeq*nd*cdp1v6nd
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ 
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'services',
     'blog',
     'contact',
+    'shop'
 ]
 
 MIDDLEWARE = [
