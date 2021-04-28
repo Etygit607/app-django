@@ -21,4 +21,5 @@ urlpatterns = [
     #include app urls
     path('', include('app.urls')),
     path('services/', include('services.urls')),
+    path('blog/', include('blog.urls')),
 ]
