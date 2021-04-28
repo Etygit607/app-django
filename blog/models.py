@@ -16,7 +16,7 @@ class Category(models.Model):
     def __str__(self):
         return self.nombre
 
-class Blog(models.Model):
+class Post(models.Model):
 
     title = models.CharField(max_length=50)
     content = models.CharField(max_length=50)
