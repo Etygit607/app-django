@@ -14,7 +14,7 @@ class Category(models.Model):
         verbose_name_plural = 'categories'
 
     def __str__(self):
-        return self.nombre
+        return self.name
 
 class Post(models.Model):
 
