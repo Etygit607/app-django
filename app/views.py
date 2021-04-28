@@ -7,9 +7,3 @@ def home(request):
 
 def store(request):
     return render(request, 'app/store.html')
-
-def blog(request):
-    return render(request, 'app/blog.html')
-
-def contacts(request):
-    return render(request, 'app/contacts.html')
