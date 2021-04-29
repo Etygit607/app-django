@@ -6,25 +6,57 @@
 {% endblock %}
 
 {% block content %}
-   <!-- Heading -->
-   <section class="clearfix page-section">
-    <div class="container">
-      <div class="intro">
-        <img class="mb-3 rounded intro-img img-fluid mb-lg-0" src="{% static 'app/img/principal.jpg' %}" alt="">
-        <div class="left-0 p-5 text-center rounded intro-text bg-faded">
-          <h2 class="mb-4 section-heading" >
-            <span class="section-heading-upper">Puntualidad</span>
-            <span class="section-heading-lower">El mejor stock</span>
-          </h2>
-          <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
-          </p>
-         
+<section class="clearfix page-section">
+  <div class="container d-flex justify-content-center mt-50 mb-50">
+    <div class="row">
+    {% for product in products %}
+      <div class="mt-2 col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-img-actions">
+                  <img src="{{ product.image.url}}" class="card-img img-fluid" width="96" height="350" alt="">
+                </div>
+            </div>
+            <div class="text-center card-body bg-light">
+                <div class="mb-2">
+                    <h6 class="mb-2 font-weight-semibold">
+                      <a href="#" class="mb-2 text-default" data-abc="true">{{product.name}}</a>
+                    </h6>
+                    <a href="#" class="text-muted" data-abc="true">{{product.category}}</a>
+                </div>
+                <h3 class="mb-0 font-weight-semibold">{{product.price}}</h3>
+                <div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> </div>
+                <div class="mb-3 text-muted">{{product.stock}}</div> <button type="button" class="btn bg-cart"><i class="mr-2 fa fa-cart-plus"></i> Add to cart</button>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+    {% endfor %}
+    </div>
+  </div>
+</section>
 
 
-  
+
+    <!-- categories -->
+    <section class="page-section cta">
+        <div class="container">
+          <div class="row">
+            <div class="mx-auto col-xl-9">
+              <div class="text-center rounded">
+                <h2 class="mb-4 section-heading">
+                  <span class="section-heading-lower">Categories</span>
+                </h2>
+                {% for product in products %}
+                    {% for category in product.categories.all %}
+                        <a class="pl-5 pr-5" href="{% url 'category' category.id %}">{{category.name}}</a>
+                    {% endfor %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 {% endblock %}
+
