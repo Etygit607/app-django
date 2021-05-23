@@ -1,0 +1,29 @@
+<table class="table table-info">
+    <thead class="table-primary">Detail</thead>
+    <tr class="table-info">
+        <th>Products</th>
+        <th>Cantidad</th>
+        <th>Sub total</th>
+    </tr>
+    <tbody class="table-info">
+        {% if request.session.cart.items %}
+            {% for key, value in request.session.cart.items %}
+                <tr>
+                    <th>{{value.name}}</th>
+                    <th>{{value.lot}}</th>
+                    <th>{{value.price}}</th>
+                    <th>
+                        <a href="{% url 'cart:add' value.product_id %}" class="btn btn-sm btn-success">+</a>
+                        <a href="{% url 'cart:subtract' value.product_id %}" class="btn btn-sm btn-danger">-</a>
+                    </th>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">
+                    <div class="text-center alert alert-danger">Aún no tienes productos en tu carro de compras</div>
+                </td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
