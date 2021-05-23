@@ -26,12 +26,16 @@
                 </div>
                 <h3 class="mb-0 font-weight-semibold">{{product.price}}</h3>
                 <div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> </div>
-                <div class="mb-3 text-muted">{{product.stock}}</div> <button type="button" class="btn bg-cart"><i class="mr-2 fa fa-cart-plus"></i> Add to cart</button>
+                <div class="mb-3 text-muted">{{product.stock}}</div> <a href="{% url 'cart:add' product.id %}" class="btn bg-cart"><i class="mr-2 fa fa-cart-plus"></i> Add to cart</a>
             </div>
         </div>
     </div>
     {% endfor %}
     </div>
+  </div>
+  <div style="float: right;">
+    <p class="text-info">Total: {{amount_total}} $ </p>
+    {% include "cart/widget.html" %}
   </div>
 </section>
 
