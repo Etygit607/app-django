@@ -12,3 +12,6 @@
 
 #ignore db
 db.sqlite3
+
+#ignore multimedia files
+/media
