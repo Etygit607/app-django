@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'contact',
     'shop',
     'cart',
+    'authentication',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +142,8 @@ EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER="example@gmail.com"
 EMAIL_HOST_PASSWORD=""
+
+# Add template Crispy forms
+# https://django-crispy-forms.readthedocs.io/en/latest/index.html
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
