@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth import login, logout
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 # Create your views here.
 class Register(View):
@@ -27,3 +27,7 @@ class Register(View):
 def sign_out(request):
     logout(request)
     return redirect('home')
+
+def sign_in(request):
+    form = AuthenticationForm()
+    return render(request, "login/login.html", {"form": form})
