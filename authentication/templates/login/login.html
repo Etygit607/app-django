@@ -16,6 +16,14 @@
                     <div class="mx-auto col-xl-9 bg-white py-5 px-3 rounded">
                         <form action="" method="post" >
                             {% csrf_token %}
+
+                            <div class="card">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        </span class="text-{{message.tags}}">{{message}}</span>
+                                    {% endfor%}
+                                {% endif%}
+                            </div>
                             {{form|crispy}}
                             <button type="submit" class="btn btn-success">Iniciar Sessión</button>
                         </form>
