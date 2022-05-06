@@ -38,9 +38,9 @@
           &nbsp;&nbsp;
           <a class="text-capitalize text-white" href="{% url 'sign_out' %}">logout</a>
         {% else %}
-          <a class="text-capitalize text-white" href="#">Login</a>
+          <a class="text-capitalize text-white" href="{% url 'sign_in' %}">Login</a>
           &nbsp;&nbsp;
-          <a class="text-capitalize text-white" href="#">Register</a>
+          <a class="text-capitalize text-white" href="{% url 'sign_up' %}">Register</a>
         {% endif %}
       </p>
     </div>
