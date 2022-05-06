@@ -31,6 +31,19 @@
         <span class="site-heading-lower">Gestión de Pedidos</span>
     </h1>
 
+    <div class="text-right text-white">
+      <p>
+        {% if user.is_authenticated %}
+          Bienvenido {{ user.username }}
+          &nbsp;&nbsp;
+          <a class="text-capitalize text-white" href="{% url 'sign_out' %}">logout</a>
+        {% else %}
+          <a class="text-capitalize text-white" href="#">Login</a>
+          &nbsp;&nbsp;
+          <a class="text-capitalize text-white" href="#">Register</a>
+        {% endif %}
+      </p>
+    </div>
 
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
