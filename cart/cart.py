@@ -5,7 +5,6 @@ class Cart:
         cart = self.session.get('cart')
         if not cart:
             cart = self.session["cart"]={}
-        #else:
         self.cart = cart
 
     def add(self, product):
