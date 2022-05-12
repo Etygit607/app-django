@@ -34,8 +34,13 @@
       </div>
     </div>
     <div style="float: right;">
-      <p class="text-info">Total: {{amount_total}} $ </p>
-      {% include "cart/widget.html" %}
+
+      {% if request.user.is_authenticated %}
+        {% include "cart/widget.html" %}
+      {% else %}
+        <div class="alert alert-danger">Iniciar sesión, para ver tu carrito de compras</div>
+      {% endif %}
+
     </div>
   </section>
   <!-- categories -->
@@ -58,4 +63,3 @@
     </div>
   </section>
 {% endblock %}
-
