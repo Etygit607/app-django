@@ -10,8 +10,5 @@
 #ignore python cache
 *.pyc
 
-#ignore db
-db.sqlite3
-
 #ignore multimedia files
-/media
+media
