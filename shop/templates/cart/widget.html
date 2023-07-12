@@ -35,5 +35,16 @@
                 {{amount_total}} $
             </th>
         </tr>
+
+        {% if request.session.cart.items %}
+        <tr>
+            <td colspan="4" style="text-align:center">
+            <a href="../order" class="btn bg-cart">
+                <i class="mr-2 fa fa-cart-plus"></i> Get Order
+            </a>
+            </td>
+        </tr>
+        {% endif %}
+
     </tfoot>
 </table>
